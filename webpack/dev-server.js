@@ -23,6 +23,10 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler));
 
-app.listen(configDev.HOT_PORT, () => {
+//process.env.PORT || 5000
+app.listen(process.env.PORT || configDev.HOT_PORT, () => {
   console.info(`Development server is listening at port ${configDev.HOT_PORT}.`); // eslint-disable-line
 });
+// app.listen(configDev.HOT_PORT, () => {
+//   console.info(`Development server is listening at port ${configDev.HOT_PORT}.`); // eslint-disable-line
+// });
