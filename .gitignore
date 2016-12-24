@@ -5,5 +5,3 @@ npm-debug.log
 
 bundle.js
 bundle.js.map
-
-.env.local
