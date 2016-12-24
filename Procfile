@@ -1,1 +1,1 @@
-web: npm run build && open build/index.html
+web: node webpack/dev-server.js
