@@ -10,9 +10,9 @@
     "npm": "^3.10.9"
   },
   "scripts": {
-    "start": "NODE_ENV=development node webpack/dev-server.js",
+    "start": "node webpack/dev-server.js",
     "clean": "rm build/bundle.*",
-    "build": "NODE_ENV=production webpack --config webpack/config.prod.js",
+    "build": "webpack --config webpack/config.prod.js",
     "prod": "npm run build && open build/index.html",
     "dev": "npm run clean; open http://localhost:6576 && npm start",
     "lint": "./node_modules/.bin/eslint webpack src || true",
