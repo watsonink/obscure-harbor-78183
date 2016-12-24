@@ -3,11 +3,20 @@
   --input-element-height: 55px;
 }
 
-div.input {
+div.inputAdd {
   margin: 0;
   height: var(--input-height);
   border-bottom: 1px solid rgb(230, 230, 230);
   box-shadow: inset 0px -5.5px 8px -8px rgba(204, 204, 204, 1);
+  background: rgba(69, 188, 87, 0.22);
+}
+
+div.inputEdit {
+  margin: 0;
+  height: var(--input-height);
+  border-bottom: 1px solid rgb(230, 230, 230);
+  box-shadow: inset 0px -5.5px 8px -8px rgba(204, 204, 204, 1);
+  background: rgba(188, 69, 69, 0.22);
 }
 
 span.caret {
@@ -15,7 +24,21 @@ span.caret {
   float: left;
   height: 40px;
   margin: 7px 0 5.5px 3px;
+  /*content: inline('./../../assets/caret.png');*/
+}
+
+span.green {
   content: inline('./../../assets/caret.png');
+}
+
+span.red {
+  content: inline('./../../assets/caret-red.png');
+}
+
+span.rotate {
+  -ms-transform: rotate(270deg); /* IE 9 */
+  -webkit-transform: rotate(270deg); /* Safari */
+  transform: rotate(270deg);
 }
 
 span.spacer {
@@ -28,17 +51,19 @@ span.spacer {
 input.text {
   float: left;
   height: var(--input-element-height);
-  width: 400px;
+  width: 88%;
   margin: 0 20px 0 10px;
+  padding-left: 20px;
   outline: none;
   border: none;
   color: rgb(89, 89, 89);
   text-align: left;
   font-size: 20px;
   box-shadow: inset 0px -5.5px 8px -8px rgba(204, 204, 204, 1);
+  background: rgba(255, 255, 255, 0);
 }
 
-input.text::-webkit-input-placeholder { 
-  font-style: italic; 
-  color: rgb(220, 220, 220);
+input.text::-webkit-input-placeholder {
+  font-style: italic;
+  color: rgba(89, 89, 89, 0.85)
 }

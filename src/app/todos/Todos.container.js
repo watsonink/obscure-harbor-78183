@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { completeTodo } from './todosActions';
+import { completeTodo, editButtonSubmitted } from './todosActions';
 import Todos from './Todos.view';
 
 import { ALL, ACTIVE, COMPLETED } from './../../state/filterTypes';
@@ -24,6 +24,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   completeTodo: id => {
     dispatch(completeTodo(id));
+  },
+  editButtonSubmitted: id => {
+    dispatch(editButtonSubmitted(id));
   }
 });
 

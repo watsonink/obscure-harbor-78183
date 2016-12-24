@@ -8,23 +8,26 @@ class Todo extends Component {
     super(props);
     this.shouldComponentUpdate = shouldPureComponentUpdate.bind(this);
     this.completeTodo = this.completeTodo.bind(this);
+    this.editButtonSubmitted = this.editButtonSubmitted.bind(this);
   }
 
   completeTodo() { this.props.completeTodo(this.props.id); }
+  editButtonSubmitted() { this.props.editButtonSubmitted(this.props.id); }
 
   render() {
-    const { text, complete } = this.props;
+    const { text, complete, isEditing } = this.props;
     return (
-      <div className={styles.todo}>
-        <span
-          className={complete ? `${styles.check} ${styles.completed}` : styles.check}
-          onClick={this.completeTodo}
-        />
-        <span
-          className={complete ? `${styles.text} ${styles.completed}` : styles.text}
-        >
-          {text}
-        </span>
+      <div>
+        {!isEditing ?
+          <div className={styles.todo}>
+            <span className={complete ? `${styles.check} ${styles.completed}` : styles.check} onClick={this.completeTodo}/>
+            <span className={complete ? `${styles.text} ${styles.completed}` : styles.text}>
+              {text}
+            </span>
+            <span className={`${styles.filter} ${styles.current}`} onClick={this.editButtonSubmitted}>Edit</span>
+          </div>
+          : null
+        }
       </div>
     );
   }
@@ -35,6 +38,8 @@ Todo.propTypes = {
   text: PropTypes.string.isRequired,
   complete: PropTypes.bool.isRequired,
   completeTodo: PropTypes.func.isRequired,
+  editButtonSubmitted: PropTypes.func,
+  isEditing: PropTypes.bool
 };
 
 export default Todo;

@@ -13,12 +13,12 @@ class App extends Component {
       <div>
         <h1 className={styles.title}>todos</h1>
         <div className={styles.list}>
-          <Input />
+          <Input isAdding={true}/>
           <Todos />
           <Footer />
         </div>
         <h6 className={styles.credit}>made with &#9825; by&nbsp;
-          <a target="_blank" href="https://github.com/jackrzhang">jackrzhang</a>
+          <a target="_blank" href="https://watsonink.com">WatsonInk</a>
         </h6>
       </div>
     );

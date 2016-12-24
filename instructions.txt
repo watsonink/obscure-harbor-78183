@@ -1,0 +1,94 @@
+*******************************************************************
+INSTRUCTIONS TO RUN APP
+*******************************************************************
+
+/*
+ * APP NAME: arcane-headland-61564
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+cd \xamppNew\htdocs\Current-React-Projects\todos-immutablejs
+
+___________________________________________________________________
+
+heroku local web
+
+
+heroku config:set NODE_ENV=development --app arcane-headland-61564
+
+
+heroku config cat .env --app arcane-headland-61564
+
+
+
+
+
+
+
+
+
+
+
+
+
+**RUN LOCALLY:
+$ heroku local
+
+error: open is not recognized
+
+$ heroku local -f Procfile.local
+$ heroku local -e .env.local
+
+
+
+
+
+truobleshooting:
+___________________________________________________________________
+
+$ heroku buildpacks --app arcane-headland-61564
+return:  heroku/nodejs
+
+$ node --version
+return: v6.9.2
+
+$ npm --version
+return: 3.10.9
+
+Change local .env and Procfile
+$ heroku local -f Procfile.local
+$ heroku local -e .env.local
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+heroku help

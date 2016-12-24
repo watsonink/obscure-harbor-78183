@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const { BUILD_DIR, SRC_DIR } = require('./constants');
 
 const config = {
-  HOT_PORT: 8080,
+  HOT_PORT: 6576,
   name: 'development',
   entry: [
     'webpack-hot-middleware/client?reload=true',
