@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 const webpack = require('webpack');
-const { BUILD_DIR, SRC_DIR } = require('./constants');
+const { BUILD_DIR, SRC_DIR, HTML_DIR } = require('./constants');
 
 const config = {
   name: 'production',
@@ -8,7 +8,7 @@ const config = {
     `${SRC_DIR}index.js`
   ],
   output: {
-    path: BUILD_DIR,
+    path: HTML_DIR,
     filename: 'bundle.js'
   },
   module: {
