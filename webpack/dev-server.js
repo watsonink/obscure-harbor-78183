@@ -38,7 +38,7 @@ app.get('/', function(request, response) {
 
 //process.env.PORT || 5000
 app.listen(process.env.PORT || configDev.HOT_PORT, () => {
-  console.info(`Development server is listening at port ${configDev.HOT_PORT} ${__dirname}.`); // eslint-disable-line
+  console.info(`Development server is listening at port ${configDev.HOT_PORT}.`); // eslint-disable-line
 });
 // app.listen(configDev.HOT_PORT, () => {
 //   console.info(`Development server is listening at port ${configDev.HOT_PORT}.`); // eslint-disable-line

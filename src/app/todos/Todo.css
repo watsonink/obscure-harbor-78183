@@ -67,26 +67,51 @@ span.text.completed::before {
   height: 2px;
   background: rgb(220, 220, 220);
 }
+
+span.cursor {
+  cursor: pointer;
+}
+
 input.text {
   float: left !important;
   background: grey !important;
 }
 
-span.filter {
-  margin: 8px 11px 0px 3px;
-  padding: 4px 6px;
+span.filterDelete {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 20px;
   cursor: pointer;
   -webkit-transition: all .1s;
   transition: all .1s;
-  border: 1px solid rgb(255, 255, 255);
-  /* line-height: 51px; */
+  border: 0px solid rgb(255, 255, 255);
   float: right;
-  color: rgba(103, 16, 16, 0.73);
-  background: rgba(164, 0, 0, 0.73);
+  line-height: 5rem;
   color: rgba(173, 89, 89, 0.44);
-  background: rgba(164, 0, 0, 0.13);
+    font-size: 1.6rem;
+  /*background: rgba(164, 0, 0, 0.13);*/
 }
 
+span.filterDelete:hover {
+    color: rgba(173, 89, 89, 1);
+}
+
+span.filterEdit {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 20px;
+  cursor: pointer;
+  -webkit-transition: all .1s;
+  transition: all .1s;
+  border: 0px solid rgb(255, 255, 255);
+  float: right;
+  line-height: 5rem;
+  color: rgba(0, 78, 164, 0.44);
+  font-size: 1.6rem;
+  /*background: rgba(0, 78, 164, 0.13);*/
+}
+
+span.filterEdit:hover {
+    color: rgba(0, 78, 164, 1);
+}
 
 span.filter.current {
   border-color: rgb(243, 224, 224);

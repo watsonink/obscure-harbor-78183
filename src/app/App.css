@@ -63,3 +63,8 @@ a {
   width: 1000px;
   background-color: rgb(255, 255, 255);
 }
+.alert {
+  max-width: 1200px !important;
+  width: 800px;
+  margin: 0 auto;
+}

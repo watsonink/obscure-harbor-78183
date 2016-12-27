@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import Input from './Input.view';
 
-import { addTodo, editTodo } from './inputActions';
+import { addTodo, editTodo, cancelTodo, cancelAddTodo } from './inputActions';
 
 const mapStateToProps = state => ({
-  canShowCaret: state.get('todos').size !== 0
+  canShowCaret: state.get('todos').size !== 0,
+  isAdding: state.get('isAdding')
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -13,6 +14,12 @@ const mapDispatchToProps = dispatch => ({
   },
   editTodo: text => {
     dispatch(editTodo(text));
+  },
+  cancelTodo: id => {
+    dispatch(cancelTodo(id));
+  },
+  cancelAddTodo: isAdding => {
+    dispatch(cancelAddTodo(isAdding));
   }
 });
 

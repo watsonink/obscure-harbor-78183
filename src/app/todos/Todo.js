@@ -9,10 +9,12 @@ class Todo extends Component {
     this.shouldComponentUpdate = shouldPureComponentUpdate.bind(this);
     this.completeTodo = this.completeTodo.bind(this);
     this.editButtonSubmitted = this.editButtonSubmitted.bind(this);
+    this.deleteButtonSubmitted = this.deleteButtonSubmitted.bind(this);
   }
 
   completeTodo() { this.props.completeTodo(this.props.id); }
   editButtonSubmitted() { this.props.editButtonSubmitted(this.props.id); }
+  deleteButtonSubmitted() { this.props.deleteButtonSubmitted(this.props.id); }
 
   render() {
     const { text, complete, isEditing } = this.props;
@@ -21,10 +23,11 @@ class Todo extends Component {
         {!isEditing ?
           <div className={styles.todo}>
             <span className={complete ? `${styles.check} ${styles.completed}` : styles.check} onClick={this.completeTodo}/>
-            <span className={complete ? `${styles.text} ${styles.completed}` : styles.text}>
+            <span className={complete ? `${styles.text} ${styles.completed}` : `${styles.text} ${styles.cursor}`} onClick={this.editButtonSubmitted}>
               {text}
             </span>
-            <span className={`${styles.filter} ${styles.current}`} onClick={this.editButtonSubmitted}>Edit</span>
+            <span className={`${styles.filterDelete} ${styles.current}`} onClick={this.deleteButtonSubmitted}>Delete</span>
+            <span className={`${styles.filterEdit} ${styles.current}`} onClick={this.editButtonSubmitted}>Edit</span>
           </div>
           : null
         }
@@ -38,6 +41,7 @@ Todo.propTypes = {
   text: PropTypes.string.isRequired,
   complete: PropTypes.bool.isRequired,
   completeTodo: PropTypes.func.isRequired,
+  deleteButtonSubmitted: PropTypes.func,
   editButtonSubmitted: PropTypes.func,
   isEditing: PropTypes.bool
 };

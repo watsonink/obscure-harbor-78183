@@ -7,8 +7,9 @@ import Footer from './Footer.view';
 const mapStateToProps = state => ({
   showFooter: state.get('todos').size !== 0,
   canClearCompleted: state.get('todos').some(todo => todo.get('complete')),
-  numIncomplete: state.get('todos')
-    .reduce((count, todo) => !todo.get('complete') ? count + 1 : count, 0),
+  numIncomplete: state.get('todos').reduce((count, todo) => !todo.get('complete') && !todo.get('isDeleted') ? count + 1 : count, 0),
+  numTotal: state.get('todos').reduce((count, todo) => todo.get('text') ? count + 1 : count, 0),
+  numInDeleted: state.get('todos').reduce((count, todo) => todo.get('isDeleted') ? count + 1 : count, 0),
   showAll: state.get('filter') === ALL,
   showActive: state.get('filter') === ACTIVE,
   showCompleted: state.get('filter') === COMPLETED

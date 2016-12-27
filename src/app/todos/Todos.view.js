@@ -13,23 +13,31 @@ class Todos extends Component {
   }
 
   render() {
-    const { todos, completeTodo, isEditing, editButtonSubmitted } = this.props;
+    const { todos, completeTodo, isEditing, isDeleted, deleteButtonSubmitted, editButtonSubmitted, cancelButtonSubmitted } = this.props;
     return (
       <div>
         {todos.map(todo => (
           <div key={todo.get('id')}>
-            <Todo
-              key={todo.get('id')}
-              id={todo.get('id')}
-              text={todo.get('text')}
-              complete={todo.get('complete')}
-              completeTodo={completeTodo}
-              isEditing={todo.get('isEditing')}
-              editButtonSubmitted={editButtonSubmitted}/>
-            <Input
-              id={todo.get('id')}
-              text={todo.get('text')}
-              isEditing={todo.get('isEditing')}/>
+            {!todo.get('isDeleted') ?
+              <div>
+                <Todo
+                  key={todo.get('id')}
+                  id={todo.get('id')}
+                  text={todo.get('text')}
+                  complete={todo.get('complete')}
+                  completeTodo={completeTodo}
+                  isEditing={todo.get('isEditing')}
+                  isDeleted={todo.get('isDeleted')}
+                  deleteButtonSubmitted={deleteButtonSubmitted}
+                  editButtonSubmitted={editButtonSubmitted}/>
+                <Input
+                  id={todo.get('id')}
+                  text={todo.get('text')}
+                  cancelButtonSubmitted={cancelButtonSubmitted}
+                  isEditing={todo.get('isEditing')}/>
+              </div>
+            : null
+            }
           </div>
         ))}
       </div>
@@ -40,8 +48,11 @@ class Todos extends Component {
 Todos.propTypes = {
   todos: ImmutablePropTypes.list.isRequired,
   completeTodo: PropTypes.func.isRequired,
+  deleteButtonSubmitted: PropTypes.func.isRequired,
+  cancelButtonSubmitted: PropTypes.func,
   editButtonSubmitted: PropTypes.func,
-  isEditing: PropTypes.bool
+  isEditing: PropTypes.bool,
+  isDeleted: PropTypes.bool
 };
 
 export default Todos;

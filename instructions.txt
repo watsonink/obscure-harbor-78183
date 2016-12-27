@@ -12,8 +12,7 @@ INSTRUCTIONS TO RUN APP
  *
  */
 
-cd \xamppNew\htdocs\Current-React-Projects\todos-immutablejs
-
+cd \xamppNew\htdocs\Current-React-Projects\obscure-harbor-78183
 ___________________________________________________________________
 
 heroku local web
@@ -27,7 +26,13 @@ heroku config cat .env --app arcane-headland-61564
 
 
 
-
+Now deploy. Almost every deploy to Heroku follows this same pattern. First, add the modified files to the local git repository:
+$ git add .
+Now commit the changes to the repository:
+$ git commit -m "Demo"
+Now deploy, just as you did previously:
+$ git push heroku master
+Finally, check that everything is working:
 
 
 
