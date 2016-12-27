@@ -1,4 +1,4 @@
-import { IS_ADD_TODO } from './../app/addButton/AddButtonActions';
+import { IS_ADD_TODO } from './../app/addButton/addButtonActions';
 import { CANCEL_ADD_TODO } from './../app/input/inputActions';
 
 export const initialIsAdding = false;
