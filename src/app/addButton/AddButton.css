@@ -1,0 +1,38 @@
+@import "../input/Input.css";
+
+:root {
+  --todo-height: 52px;
+  --todo-element-height: 51px;
+}
+
+div.addContainer {
+  margin: 0;
+  width: 100%;
+  height: var(--todo-height);
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+
+span.cursor {
+  cursor: pointer;
+}
+
+div.addButton {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 20px;
+  cursor: pointer;
+  -webkit-transition: all .1s;
+  transition: all .1s;
+  border: 0px solid rgb(255, 255, 255);
+  float: left;
+  line-height: 5rem;
+  color: rgba(0, 78, 164, 0.44);
+  font-size: 1.6rem;
+  width:100%;
+  margin: 0;
+  height: 52px;
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+
+span.addButton:hover {
+    color: rgba(0, 78, 164, 1);
+}
